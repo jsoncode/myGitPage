@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  z-index: 0;
+  padding: 20px;
+
+  .content {
+    h1 {
+      font-size: 26px;
+      display: flex;
+      flex-wrap: wrap;
+
+      a {
+        color: #1677ff;
+        border-bottom: 1px solid #1677ff;
+      }
+    }
+  }
+}
+
+
+.itemBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  > span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      flex-grow: 1;
+      width: 0;
+    }
+
+    &:last-child {
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+  }
+}

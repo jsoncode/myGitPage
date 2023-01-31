@@ -1,0 +1,251 @@
+.header {
+  position: fixed;
+  background-color: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .headerContent {
+    backdrop-filter: unset;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .nav {
+    display: flex;
+    align-items: stretch;
+    height: 50px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .Breadcrumb {
+    line-height: 1;
+    font-size: 12px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+
+    :global {
+      .ant-breadcrumb-link {
+        a {
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .left {
+    flex-shrink: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .toggleWrap {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 15px;
+  }
+
+  .logo {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right {
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    .rightInnerMenu {
+      .menuLogo {
+        display: none;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        background-color: rgba(255, 255, 255, .1);
+        position: relative;
+
+        .content {
+          position: relative;
+          z-index: 1;
+
+        }
+
+        .video {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 0;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-menu {
+      border-bottom: 0;
+      align-items: stretch;
+      margin-left: auto;
+      background: none;
+      justify-content: flex-end;
+
+      .ant-menu-overflow-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+
+        .ant-menu-item-icon {
+          display: none;
+        }
+
+        .ant-menu-title-content {
+          margin-left: 0;
+          padding-left: 15px;
+          padding-right: 15px;
+          line-height: 50px;
+        }
+      }
+
+      .ant-menu-submenu {
+        .ant-menu-submenu-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    backdrop-filter: none;
+    background: none;
+
+    .headerContent {
+      .nav {
+        height: unset;
+      }
+    }
+
+    .BreadcrumbWrap {
+      background-color: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+
+      .mobileNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 50px;
+      }
+    }
+
+    .left {
+      display: none;
+    }
+
+    .right {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 3;
+      pointer-events: none;
+      background-color: transparent;
+      transition-duration: .3s;
+
+      &.showNav {
+        pointer-events: all;
+        background-color: rgba(0, 0, 0, .2);
+
+        .rightInnerMenu {
+          left: 0;
+          visibility: visible;
+          box-shadow: 30px 0 100px rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      .rightInnerMenu {
+        left: -300px;
+        position: relative;
+        transition-duration: .3s;
+        pointer-events: all;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, .8);
+        box-shadow: none;
+        width: 300px;
+        height: 100%;
+        top: 0;
+        display: flex;
+        visibility: hidden;
+        flex-direction: column;
+
+        .menuLogo {
+          display: flex;
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    :global {
+      .ant-menu {
+        height: 100%;
+        overflow: auto;
+
+        .ant-menu-overflow-item {
+          .ant-menu-item-icon {
+            display: inline-flex;
+          }
+        }
+
+        .ant-menu-title-content {
+          padding-right: 20px;
+
+          a {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}

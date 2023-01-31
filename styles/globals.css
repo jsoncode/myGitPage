@@ -1,0 +1,65 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1.5;
+    padding-top: 80px;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+code {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+}
+
+pre {
+    overflow: hidden;
+}
+
+pre code {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+}
+
+code.hljs {
+    /*background-color: #f6f8fa;*/
+}
+
+.ant-list .ant-list-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+blockquote {
+    border-left: 3px solid #1677ff;
+    margin-left: 0;
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+blockquote :first-child {
+    margin-top: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
