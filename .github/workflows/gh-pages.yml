@@ -4,7 +4,7 @@ name: Deploy
 # 当 main 分支的 push 事件被触发的时候执行该任务
 on:
   push:
-    branches: [main]
+    branches: [publish]
 # jobs 是定义你要运行的具体任务，
 # 每个 Action 可以有多个 Job
 # 每个 Job 可以有多个 Step
@@ -28,6 +28,6 @@ jobs:
                git init
                git checkout -b main
                git add -A
-               git -c user.name='jsoncode' -c user.email='jsoncode@githu.com' commit -m 'deploy'
-               git remote add origin https://${{secrets.ACTIONS_DEPLOY_KEY}}@github.com/jsoncode/jsoncode.github.io.git
+               git -c user.name='{username}' -c user.email='{username}@githu.com' commit -m 'deploy'
+               git remote add origin https://${{secrets.ACTIONS_DEPLOY_KEY}}@github.com/{username}/{username}.github.io.git
                git push origin main -f -q
